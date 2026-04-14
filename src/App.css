@@ -41,12 +41,19 @@ h1 {
   border-radius: 5px;
 }
 
-.chess-board {
+.chess-container {
   display: inline-block;
   border: 2px solid #333;
   margin-bottom: 20px;
   max-width: 100%;
   overflow-x: auto;
+  scrollbar-width: thin;
+  scrollbar-color: #888 #f1f1f1;
+}
+
+.chess-board {
+  display: inline-block;
+  min-width: 400px;
 }
 
 .chess-row {
