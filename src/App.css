@@ -6,19 +6,23 @@ body {
   min-height: 100vh;
   margin: 0;
   background-color: #f0f2f5;
+  overflow-x: hidden;
 }
 
 .app {
   text-align: center;
-  padding: 20px;
+  padding: 10px;
+  width: 100%;
 }
 
 .chess-app {
   background-color: white;
   border-radius: 10px;
   box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
-  padding: 30px;
-  max-width: 500px;
+  padding: 20px;
+  max-width: 100%;
+  width: 100%;
+  overflow-x: auto;
 }
 
 h1 {
@@ -41,6 +45,8 @@ h1 {
   display: inline-block;
   border: 2px solid #333;
   margin-bottom: 20px;
+  max-width: 100%;
+  overflow-x: auto;
 }
 
 .chess-row {
@@ -50,12 +56,15 @@ h1 {
 .chess-square {
   width: 50px;
   height: 50px;
+  min-width: 50px;
+  min-height: 50px;
   display: flex;
   justify-content: center;
   align-items: center;
   font-size: 24px;
   cursor: pointer;
   transition: background-color 0.2s;
+  flex-shrink: 0;
 }
 
 .chess-square:hover {
@@ -93,14 +102,47 @@ h1 {
   color: #555;
 }
 
-@media (max-width: 600px) {
+@media (max-width: 768px) {
+  .chess-app {
+    padding: 15px;
+  }
+
   .chess-square {
-    width: 40px;
-    height: 40px;
+    width: 45px;
+    height: 45px;
     font-size: 20px;
   }
 
   .chess-piece {
-    font-size: 24px;
+    font-size: 22px;
+  }
+
+  h1 {
+    font-size: 1.5em;
+  }
+
+  .game-status {
+    font-size: 1em;
+  }
+}
+
+@media (max-width: 480px) {
+  .chess-square {
+    width: 40px;
+    height: 40px;
+    font-size: 18px;
+  }
+
+  .chess-piece {
+    font-size: 20px;
+  }
+
+  .chess-app {
+    padding: 10px;
+  }
+
+  h1 {
+    font-size: 1.3em;
+    margin-bottom: 15px;
   }
 }
