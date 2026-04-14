@@ -58,8 +58,9 @@ function ChessBoard() {
     <div className="chess-app">
       <h1>♟️ Chess Game</h1>
       <div className="game-status">{gameStatus}</div>
-      <div className="chess-container">
-        <div className="chess-board">
+      <div className="chess-container-wrapper">
+        <div className="chess-container">
+          <div className="chess-board">
         {board.map((row, rowIndex) => (
           <div key={rowIndex} className="chess-row">
             {row.map((piece, colIndex) => (
@@ -75,6 +76,7 @@ function ChessBoard() {
             ))}
           </div>
         ))}
+          </div>
         </div>
       </div>
       <div className="instructions">
